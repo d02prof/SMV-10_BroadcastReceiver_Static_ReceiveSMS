@@ -1,0 +1,33 @@
+//TODO Statiæni broadcast receiver, ki dela najmanj do verzije Anroid 8
+//TODO Bazira na:
+//TODO ReceiveSMS
+//TODO Coding in Flow BroadcastReceiver Tutorial Part 1 - STATIC RECEIVERS (https://www.youtube.com/watch?v=8FJ3oOpHszc&list=PLrnPJCHvNZuBqr_0AS9BPXgU6gvNeai5S&index=1)
+//TODO koda: https://codinginflow.com/tutorials/android/broadcastreceiver/part-1-static-broadcastreceiver
+//TODO https://www.youtube.com/watch?v=pke6sMxOsuw
+//TODO koda: https://drive.google.com/drive/folders/1K_bhMwjwb31izBjjEP9vMvxVtfTcF9mp  ReceiveMessage.rar
+
+//TODO java/New/Other/Broadcast Receiver
+//TODO dovoljeneje v MainActivity
+//TODO sprejemanje sms v receiverju
+//TODO <receiver> se doda avtomatièno, "android.provider.Telephony.SMS_RECEIVED" JE POTREBNO NATIPKATI, sistem ga ne predlaga
+//TODO roèno jw potrebno dodati <intent-filter>,
+//TODO Manifest:  <uses-permission android:name="android.permission.RECEIVE_SMS" />
+//TODO Manifest:         <receiver
+//TODO Manifest:            android:name=".SMSReceiver"
+//TODO Manifest:            android:enabled="true"
+//TODO Manifest:            android:exported="true">
+//TODO Manifest:            <intent-filter>
+//TODO Manifest:                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+//TODO Manifest:           </intent-filter>
+//TODO Manifest:        </receiver>
+
+//TODO Ikona
+
+Na zadnjih vajah pri SMS - Android, preden se lotite vsak svojega projekta, ki bo ocenjen, se bomo posvetili broadcast receiverjem. Zelo poenostavljeno povedano so to komponente, ki omogoèajo, da od sistema prejmejo obvestilo o doloèenem dogodku, da lahko odreagirajo nanj. To je zelo široka tema, obstaja veè vrst broadcast receiverjev, ki zahtevajo razliène implementacije, razlikujejo pa se tudi v razliènih verzijah Androida.
+Zelo dober komplet tutorialov, ki pokriva velik spekter broadcast receiverjev najdete na https://codinginflow.com/tutorials/android/broadcastreceiver/part-1-static-broadcastreceiver 
+Za našo aplikacijo bo dovolj, da si naštudirate statiène broadcast receiverje (https://www.youtube.com/watch?v=8FJ3oOpHszc&list=PLrnPJCHvNZuBqr_0AS9BPXgU6gvNeai5S&index=1%29 ).
+	
+Napišimo aplikacijo, ki bo odreagirala na prejeti SMS s pomoèjo broadcast receiverja tako, da bo v toastu izpisala od koga je prišel SMS (lahko le številko, èe želite malo veè pa tudi ime pošiljatelja, èe je v imeniku) ter vsebino SMSa. Pomagaš si lahko npr. z  https://www.youtube.com/watch?v=pke6sMxOsuw oz.  sam poišèeš pomoè.
+
+Takšna aplikacija je lahko osnova za marsikatero dodatno funkcionalnost. Na podlagi kljuènih besed v prejetem in prestreženem sms-u lahko aplikacija npr. po smsu vrne trenutno lokacijo naprave ali pa preklopi iz tihega naèina zvonjenja, da bomo telefon lahko poiskali s klicem nanj oz. kar brez klica takoj predvaja nek zvok, opravi telefonski klic (ki npr. odpre zapornico), zaène snemati zvok / in ali video in še marsikaj).
+Sam si izberi, kaj naj se ob prejetju SMSa z neko kljuèno besedo v aplikaciji zgodi in implementiraj to funkcionalnost.
